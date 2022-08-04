@@ -4,7 +4,7 @@ import connectDB from "./connection/connectDB.js";
 import routes from "./routes/web.js";
 import bodyParser from "body-parser";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.static(join(process.cwd(), "public")));
 app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: true }));
