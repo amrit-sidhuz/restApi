@@ -9,7 +9,7 @@ app.use(express.static(join(process.cwd(), "public")));
 app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-const DATABASE_URL = "mongodb+srv://AmritSidhu:amrit.sidhu365@cluster0.nhoxgg4.mongodb.net/?retryWrites=true&w=majority";
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://AmritSidhu:amrit.sidhu365@cluster0.nhoxgg4.mongodb.net/?retryWrites=true&w=majority";
 connectDB(DATABASE_URL);
 
 app.set("views", "./views");
